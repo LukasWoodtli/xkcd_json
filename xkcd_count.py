@@ -29,4 +29,4 @@ with open(record_file, 'r') as f:
   still_to_read = num_of_xkcds - num
   print "Read already: %i" % num
   print "Still to read: %i" % still_to_read
-  print "Percent read: %f" % (num*100/still_to_read)
+  print "Percent read: %.2f" % (num*100/still_to_read)
