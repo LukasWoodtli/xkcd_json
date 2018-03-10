@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 
 import urllib2
 import json
@@ -28,7 +28,7 @@ with open(record_file, 'r') as f:
     num += (int(nums[1]) - int(nums[0]) + 1)
   
   still_to_read = num_of_xkcds - num
-  print "Total xkcd comics: %i" % num_of_xkcds
-  print "Read already: %i" % num
-  print "Still to read: %i" % still_to_read
-  print "Percent read: %.2f" % (num*100/num_of_xkcds)
+  print("Total xkcd comics: %i" % num_of_xkcds)
+  print("Read already: %i" % num)
+  print("Still to read: %i" % still_to_read)
+  print("Percent read: %.2f" % (num*100/num_of_xkcds))
