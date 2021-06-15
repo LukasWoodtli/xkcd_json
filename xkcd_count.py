@@ -1,6 +1,6 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 
-import urllib2
+import urllib.request
 import json
 import os
 
@@ -10,7 +10,7 @@ newest_xkcd = 'http://xkcd.com/info.0.json'
 
 record_file = os.path.join(THIS_FILES_DIRECTORY, 'read_xkcd.txt')
 
-response = urllib2.urlopen(newest_xkcd)
+response = urllib.request.urlopen(newest_xkcd)
 xkcd = response.read()
 
 num_of_xkcds = json.loads(xkcd)['num']
