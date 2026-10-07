@@ -18,6 +18,15 @@ num_of_xkcds = json.loads(xkcd)['num']
 
 read_xkcds = set()
 
+
+def find_oldest_to_read(s: set):
+  # Source - https://stackoverflow.com/a/28178803
+  # Posted by Antti Haapala, modified by community. See post 'Timeline' for change history
+  # Retrieved 2026-10-06, License - CC BY-SA 3.0
+
+  return next(i for i, e in enumerate(sorted(list(s)) + [None], 1) if i != e)
+
+
 with open(record_file, 'r') as f:
   lines = f.readlines()
   lines = lines[1:]
@@ -43,4 +52,6 @@ with open(record_file, 'r') as f:
   all_xkcds = set(range(1, num_of_xkcds + 1))
   not_read = all_xkcds - read_xkcds
   to_read = random.choice(list(not_read))
-  print(f"Random xkcd to read: https://www.explainxkcd.com/wiki/index.php/{to_read}")
+  print(f"Random xkcd to read: https://www.explainxkcd.com/wiki/index.php/{to_read}\n")
+  oldest_to_read = find_oldest_to_read(read_xkcds)
+  print(f"Oldest xkcd to read: https://www.explainxkcd.com/wiki/index.php/{oldest_to_read}")
